@@ -8,7 +8,7 @@ import android.widget.Toast
 import com.google.android.material.textfield.TextInputLayout
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var imageView: TextInputLayout
+
     private lateinit var name: TextInputLayout
     private lateinit var email: TextInputLayout
     private lateinit var password: TextInputLayout
@@ -32,17 +32,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun toValidateDataSent() {
-        val imageView = imageView.editText?.text?.toString()?.trim()
+
         val name = name.editText?.text?.toString()?.trim()
         val email = email.editText?.text?.toString()?.trim()
         val password = password.editText?.text?.toString()?.trim()
         val confirmPassword = confirmPassword.editText?.text?.toString()?.trim()
 
-        if (imageView!!.isEmpty() || name!!.isEmpty() || email!!.isEmpty() || password!!.isEmpty() || confirmPassword!!.isEmpty()
+        if ( name!!.isEmpty() || email!!.isEmpty() || password!!.isEmpty() || confirmPassword!!.isEmpty()
         ) {
             Toast.makeText(this, "All fields are required", Toast.LENGTH_SHORT).show()
         } else {
-            toConfirmPassword(imageView.toString(), name, email, password, confirmPassword)
+            toConfirmPassword( name, email, password, confirmPassword)
         }
 
 
@@ -53,11 +53,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun toConfirmPassword(
-        imageView: String, name: String, email: String, password: String,
+      name: String, email: String, password: String,
         confirmPassword: String
     ) {
         if (password == confirmPassword) {
-            toTheNextPage(imageView, name, email, password, confirmPassword)
+            toTheNextPage( name, email, password, confirmPassword)
         } else {
             return errorMessage()
 
@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun toTheNextPage(
-        imageView: String,
+
         name: String, email: String, password: String,
         confirmPassword: String,
 
@@ -76,14 +76,14 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this@MainActivity, HomeActivity::class.java)
         intent.putExtra("name", name)
         intent.putExtra("email", email)
-        intent.putExtra("imageView", imageView)
+
 
         startActivity(intent)
 
     }
 
     private fun initViews() {
-        imageView = findViewById(R.id.imageView)
+
         name = findViewById(R.id.name)
         email = findViewById(R.id.email)
         password = findViewById(R.id.password)

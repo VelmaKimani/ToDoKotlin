@@ -1,4 +1,4 @@
-package com.example.todo
+package com.velma.todo
 
 import org.junit.Test
 

@@ -1,11 +1,12 @@
-package com.example.todo
+package com.velma.todo.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
+/*import com.example.todo.R*/
 import com.google.android.material.textfield.TextInputLayout
+import com.velma.todo.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -91,6 +92,5 @@ class MainActivity : AppCompatActivity() {
         createAcc = findViewById(R.id.createAcc)
 
     }
-
 }
 

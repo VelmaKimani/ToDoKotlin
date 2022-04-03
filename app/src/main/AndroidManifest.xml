@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.todo" >
+    package="com.velma.todo" >
 
     <application
         android:allowBackup="true"
@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ToDo" >
         <activity
-            android:name=".HomeActivity"
+            android:name="com.velma.todo.activity.AddNoteActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name="com.velma.todo.activity.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.velma.todo.activity.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.velma.todo.activity.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

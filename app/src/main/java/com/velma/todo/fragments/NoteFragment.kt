@@ -10,11 +10,13 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import com.velma.todo.R
-import com.velma.todo.activity.AddNoteActivity
-import com.velma.todo.adapters.NotesAdapter
-import com.velma.todo.databinding.FragmentNoteBinding
-import com.velma.todo.model.Note
-import com.velma.todo.utils.Constants
+
+
+// TODO: Rename parameter arguments, choose names that match
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
+
 
 /**
  * A simple [Fragment] subclass.

@@ -6,9 +6,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
-import com.velma.todo.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.velma.todo.databinding.ActivityHomeBinding
+
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding:ActivityHomeBinding

@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputLayout
-import com.velma.todo.R
+
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -18,7 +18,7 @@ class SignUpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_sign_up)
          initViews()
         /*val buttonClick = findViewById<Button>(R.id.createAcc)
         buttonClick.setOnClickListener {
@@ -74,10 +74,10 @@ class SignUpActivity : AppCompatActivity() {
          ) {
          //intent
          val intent = Intent(this@SignUpActivity, HomeActivity::class.java)
-         intent.putExtra("name", name)
-         intent.putExtra("email", email)
-
-
+         intent.putExtra(Constants.NAME, name)
+         intent.putExtra(Constants.EMAIL, email)
+         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
          startActivity(intent)
 
      }

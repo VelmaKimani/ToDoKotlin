@@ -35,12 +35,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/notesRecyclerView"
-        android:layout_width="378dp"
-        android:layout_height="699dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvHello"
-        tools:listitem="@layout/note_view_layout" />
+        tools:listitem="@layout/note_view_layout"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

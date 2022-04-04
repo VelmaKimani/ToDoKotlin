@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
     <item
-        android:id="@+id/homeFragment"
-        android:title="Home"
+        android:id="@+id/noteFragment"
+        android:title="@string/note"
         android:icon="@drawable/ic_baseline_home" />
     <item
         android:id="@+id/profileFragment"
-        android:title="Profile"
+        android:title="@string/profile"
         android:icon="@drawable/ic_baseline_person" />
     <item
-        android:id="@+id/settingsFragment"
-        android:title="Settings"
+        android:id="@+id/draftFragment"
+        android:title="@string/draft"
         android:icon="@drawable/ic_baseline_app_settings_alt_24" />
 
 </menu>

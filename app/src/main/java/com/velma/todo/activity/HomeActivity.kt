@@ -7,10 +7,12 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.velma.todo.R
+import com.velma.todo.databinding.ActivityHomeBinding
 
 
 class HomeActivity : AppCompatActivity() {
-    private lateinit var binding:ActivityHomeBinding
+    private lateinit var binding: com.velma.todo.databinding.ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)

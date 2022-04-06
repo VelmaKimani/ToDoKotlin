@@ -10,6 +10,11 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import com.velma.todo.R
+import com.velma.todo.activity.AddNoteActivity
+import com.velma.todo.adapters.NotesAdapter
+import com.velma.todo.databinding.FragmentNoteBinding
+import com.velma.todo.model.Note
+import com.velma.todo.utils.Constants
 
 
 // TODO: Rename parameter arguments, choose names that match

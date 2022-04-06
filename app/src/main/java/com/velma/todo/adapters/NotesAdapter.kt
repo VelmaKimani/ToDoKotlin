@@ -1,10 +1,12 @@
 package com.velma.todo.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.card.MaterialCardView
@@ -26,6 +28,11 @@ class NotesAdapter(private val context: Context, private val itemClickListener: 
         //hey, no, yes
         //val note = notes[position]
         holder.bind(notes[position])
+        //holder.itemView.setOnClickListener()
+        holder.itemView.setOnClickListener {
+            Log.i("adapter", "onBindViewHolder: noteViewClicked")
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -42,13 +49,13 @@ class NotesAdapter(private val context: Context, private val itemClickListener: 
         View.OnClickListener {
         private val noteTitle = itemView.findViewById<TextView>(R.id.tvTitle)
         private val noteDate = itemView.findViewById<TextView>(R.id.tvDate)
-        private val noteCardView = itemView.findViewById<MaterialCardView>(R.id.noteCardView)
+        private val noteCard = itemView.findViewById<MaterialCardView>(R.id.noteCardView)
 
 
         fun bind(note: Note) {
             noteTitle.text = note.title
             noteDate.text = note.timeStamp
-            noteCardView.setOnClickListener(this)
+            noteCard.setOnClickListener(this)
         }
 
         override fun onClick(view: View?) {
@@ -56,11 +63,14 @@ class NotesAdapter(private val context: Context, private val itemClickListener: 
             if (view != null) {
                 itemClickListener.itemClicked(view, note)
             }
+            /*val card = noteCard
+            itemClickListener.itemClicked(card, note)*/
         }
 
     }
 
     interface ItemClickListener {
         fun itemClicked(view: View, note: Note)
+        /*fun itemClicked(cardView: MaterialCardView)*/
     }
 }

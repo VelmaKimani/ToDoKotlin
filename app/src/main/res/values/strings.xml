@@ -19,4 +19,10 @@
     <string name="note">Note</string>
     <string name="profile">Profile</string>
     <string name="draft">Draft</string>
+    <string name="logo">logo</string>
+    <string name="login_text">Log in</string>
+    <string name="notes">Notes</string>
+    <string name="priority">Priority</string>
+    <string name="title">Title</string>
+    <string name="cont">Continue</string>
 </resources>

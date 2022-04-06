@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputLayout
+import com.velma.todo.R
+import com.velma.todo.utils.Constants
 
 
 class SignUpActivity : AppCompatActivity() {
@@ -14,6 +16,7 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var password: TextInputLayout
     private lateinit var confirmPassword: TextInputLayout
     private lateinit var createAcc: Button
+    private lateinit var loginBtn: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,10 +31,25 @@ class SignUpActivity : AppCompatActivity() {
          createAcc.setOnClickListener {
              toValidateDataSent()
          }
+         loginBtn.setOnClickListener{
+             toLoginPage()
+         }
 
     }
 
-     private fun toValidateDataSent() {
+    private fun toLoginPage() {
+        val email = email.editText?.text?.toString()?.trim()
+        val password = password.editText?.text?.toString()?.trim()
+
+        val intent = Intent(this@SignUpActivity, LogInActivity::class.java)
+        intent.putExtra(Constants.EMAIL, email)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
+    }
+
+
+    private fun toValidateDataSent() {
 
          val name = name.editText?.text?.toString()?.trim()
          val email = email.editText?.text?.toString()?.trim()
@@ -89,6 +107,7 @@ class SignUpActivity : AppCompatActivity() {
          password = findViewById(R.id.password)
          confirmPassword = findViewById(R.id.confirmPassword)
          createAcc = findViewById(R.id.createAcc)
+         loginBtn = findViewById(R.id.loginBtn)
 
      }
 }

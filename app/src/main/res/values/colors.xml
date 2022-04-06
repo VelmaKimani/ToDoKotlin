@@ -11,5 +11,9 @@
     <color name="text_light">#FF1B2B3A</color>
     <color name="text_bold">#FF919FAC</color>
     <color name="background">#FFE5E5E5</color>
+    <color name="puce">#A95C68</color>
+    <color name="light_violet">#CF9FFF</color>
+    <color name="mauve">#E0B0FF</color>
+    <color name="purple_100"></color>
 
 </resources>

@@ -4,14 +4,17 @@
     <item
         android:id="@+id/noteFragment"
         android:title="@string/note"
-        android:icon="@drawable/ic_baseline_notes"/>
+        android:icon="@drawable/ic_baseline_notes"
+        />
     <item
         android:id="@+id/profileFragment"
         android:title="@string/profile"
-        android:icon="@drawable/ic_baseline_person" />
+        android:icon="@drawable/ic_baseline_person"
+        />
     <item
         android:id="@+id/draftFragment"
         android:title="@string/draft"
-        android:icon="@drawable/ic_baseline_drafts" />
+        android:icon="@drawable/ic_baseline_drafts"
+        />
 
 </menu>

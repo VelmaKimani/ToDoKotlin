@@ -2,6 +2,7 @@ package com.velma.todo.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,13 +15,9 @@ import com.velma.todo.activity.AddNoteActivity
 import com.velma.todo.adapters.NotesAdapter
 import com.velma.todo.databinding.FragmentNoteBinding
 import com.velma.todo.model.Note
+import com.velma.todo.model.User
 import com.velma.todo.utils.Constants
-
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import kotlinx.android.synthetic.main.fragment_note.*
 
 
 /**
@@ -31,14 +28,13 @@ class NoteFragment : Fragment(), NotesAdapter.ItemClickListener {
 
     private lateinit var binding: FragmentNoteBinding
     private val _binding get() = binding!!
-
-    private var name: String? = null
-    private var email: String? = null
+    private lateinit var user: User
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        name = requireActivity().intent.getStringExtra(Constants.NAME)
-        email = requireActivity().intent.getStringExtra(Constants.EMAIL)
+        if (requireActivity().intent != null) {
+            user = requireActivity().intent.getParcelableExtra(Constants.USER)!!
+        }
     }
 
     override fun onCreateView(
@@ -52,7 +48,7 @@ class NoteFragment : Fragment(), NotesAdapter.ItemClickListener {
 
     private fun initViews() {
         binding.apply {
-            val fullname = "Hello $name"
+            val fullname = "Hello ${user.name}"
             tvHello.text = fullname
             tvHello.setOnClickListener{toProfilePage()}
             tvAddNotes.setOnClickListener { toTheAddPage() }
@@ -61,12 +57,10 @@ class NoteFragment : Fragment(), NotesAdapter.ItemClickListener {
             val layoutManger = LinearLayoutManager(requireActivity())
             layoutManger.orientation = VERTICAL
             notesRecyclerView.apply {
-                setLayoutManager(layoutManger)
+                layoutManager = layoutManger
                 setHasFixedSize(true)
                 adapter = noteAdapter
             }
-
-
         }
         /*notesRecyclerView.layoutManager = layoutManger
         notesRecyclerView.adapter = noteAdapter
@@ -76,8 +70,7 @@ class NoteFragment : Fragment(), NotesAdapter.ItemClickListener {
     private fun toProfilePage() {
         val navController = Navigation.findNavController(binding.root)
         val args = Bundle()
-        args.putString(Constants.NAME, name)
-        args.putString(Constants.EMAIL, email)
+        args.putParcelable(Constants.USER, user)
         navController.navigate(R.id.action_noteFragment_to_profileFragment, args)
     }
 

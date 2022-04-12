@@ -30,11 +30,9 @@ class NotesAdapter(private val context: Context, private val itemClickListener: 
         holder.bind(notes[position])
         //holder.itemView.setOnClickListener()
         holder.itemView.setOnClickListener {
-            Log.i("adapter", "onBindViewHolder: noteViewClicked")
+            Log.i("adapter", "onBindViewHolder: noteCardView")
         }
-
     }
-
     override fun getItemCount(): Int {
 
         return notes.size
@@ -51,7 +49,6 @@ class NotesAdapter(private val context: Context, private val itemClickListener: 
         private val noteDate = itemView.findViewById<TextView>(R.id.tvDate)
         private val noteCard = itemView.findViewById<MaterialCardView>(R.id.noteCardView)
 
-
         fun bind(note: Note) {
             noteTitle.text = note.title
             noteDate.text = note.timeStamp
@@ -66,9 +63,7 @@ class NotesAdapter(private val context: Context, private val itemClickListener: 
             /*val card = noteCard
             itemClickListener.itemClicked(card, note)*/
         }
-
     }
-
     interface ItemClickListener {
         fun itemClicked(view: View, note: Note)
         /*fun itemClicked(cardView: MaterialCardView)*/
